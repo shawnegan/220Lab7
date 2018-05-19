@@ -97,7 +97,6 @@ void SortingClass::selectionSort(int arr[]) {
 		arr[min_pos] = tmp;
 	}
 }
-// TODO : finish insertionSort
 void SortingClass::insertionSort(int arr[]){
 	int i, comp, j;
 	for(i = 1; i < size; i++){
@@ -111,6 +110,7 @@ void SortingClass::insertionSort(int arr[]){
 	}
 }
 
+//TODO : quickSort does not work
 void SortingClass::quickSort(int first, int last, int arr[]){
 	if(last - first > 1){
 		int piv_index = partition(first, last, arr);
@@ -182,8 +182,6 @@ void SortingClass::merge(int arr[], int f, int m, int l){
 
 }
 void SortingClass::mergeSort(int arr[], int low, int hi) {
-// (4 pts)keeps dividing the portion of the array between the low index and the hi
-// index by dividing by 2
 	if(low < hi){
 		int m = low+(hi-low)/2;
 		mergeSort(arr, low, m);
