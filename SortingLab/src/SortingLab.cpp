@@ -14,7 +14,7 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
-	SortingClass newSrtCls = SortingClass(100,0,99);
+	SortingClass newSrtCls = SortingClass();
 	newSrtCls.compareSorts();
 
 }
