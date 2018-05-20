@@ -115,7 +115,6 @@ void SortingClass::insertionSort(int arr[]){
 	}
 }
 
-//TODO : quickSort does not work
 void SortingClass::quickSort(int first, int last, int arr[]){
 	if(last - first > 1){
 		int piv_index = partition(first, last, arr);
@@ -125,9 +124,11 @@ void SortingClass::quickSort(int first, int last, int arr[]){
 }
 int SortingClass::partition(int first, int last, int arr[]){
 	int pivot = arr[first];
-	int p = first;
 	int i = first + 1;
 	int j = last;
+	if(j == size){
+		j--;
+	}
 	int tmp;
 	while(i <= j){
 		while(arr[i] < pivot){
@@ -144,7 +145,9 @@ int SortingClass::partition(int first, int last, int arr[]){
 			j--;
 		}
 	}
-	return p;
+	arr[first] = arr[j];
+	arr[j] = pivot;
+	return j;
 
 }
 
@@ -204,6 +207,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	selectionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -215,6 +219,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	selectionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -226,6 +231,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	selectionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -238,6 +244,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	insertionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -249,6 +256,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	insertionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -260,6 +268,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	insertionSort(arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -272,6 +281,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	quickSort(0,size,arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -283,6 +293,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	quickSort(0,size,arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -294,6 +305,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	quickSort(0,size,arr);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -307,6 +319,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	mergeSort(arr,0,size-1);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -318,6 +331,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	mergeSort(arr,0,size-1);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}
@@ -329,6 +343,7 @@ void SortingClass::compareSorts() {
 	startTime = clock();
 	mergeSort(arr,0,size-1);
 	timePassed = clock() - startTime;
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i]<<", ";
 	}

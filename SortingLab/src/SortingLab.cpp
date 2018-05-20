@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : SortingLab.cpp
-// Author      : Shawn
+// Author      : Shawn Egan & Justin Schnee
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
@@ -11,10 +11,11 @@
 #include "SortingClass.hpp"
 using namespace std;
 
+// Quick Sort crashed at array size of 50,000
 
 int main() {
 	srand(time(NULL));
-	SortingClass newSrtCls = SortingClass();
+	SortingClass newSrtCls = SortingClass(1000,0,999);
 	newSrtCls.compareSorts();
 
 }
