@@ -14,16 +14,7 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
-	SortingClass newSrtCls = SortingClass(10, 0, 9);
-	/* uncomment this to show comparison
-	 * newSrtCls.compareSorts();
-	 */
+	SortingClass newSrtCls = SortingClass(100,0,99);
+	newSrtCls.compareSorts();
 
-	// test for quick Sort
-
-	int * arry = newSrtCls.copyArr("rand");
-	newSrtCls.quickSort(0, 9, arry);
-	for(int i = 0; i < 10; i++){
-		cout << arry[i] <<  ", ";
-	}
 }

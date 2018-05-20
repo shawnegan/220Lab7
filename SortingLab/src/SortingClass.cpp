@@ -1,5 +1,4 @@
 #include "SortingClass.hpp"
-#include <ctime>
 #include <cstdlib>
 #include <string>
 #include <iostream>
@@ -50,21 +49,21 @@ SortingClass::SortingClass(int si){
 	}
 }
 SortingClass::SortingClass(){
-	inOrderArr = new int[5000];
-	randArr = new int[5000];
-	revOrderArr = new int[5000];
-	size = 5000;
-	smallest = 10;
-	largest = 5010;
+	inOrderArr = new int[50000];
+	randArr = new int[50000];
+	revOrderArr = new int[50000];
+	size = 50000;
+	smallest = 0;
+	largest = 50000;
 
-	int inOrdTracker = 10;
-	int revOrdTracker = 5010;
+	int inOrdTracker = 0;
+	int revOrdTracker = 50000;
 
-	for(int i = 0; i < 5000; i++){
+	for(int i = 0; i < 50000; i++){
 		inOrderArr[i] = inOrdTracker;
 		inOrdTracker++;
 
-		randArr[i] = rand()%(5000) + 10;
+		randArr[i] = rand()%(50000);
 
 		revOrderArr[i] = revOrdTracker;
 		revOrdTracker--;
@@ -75,11 +74,17 @@ int *SortingClass::copyArr(string s) {
 	int *newArray = new int[size];
 
 	if(s == "rev"){
-		newArray = revOrderArr;
+		for(int i = 0; i < size; i++){
+			newArray[i] = revOrderArr[i];
+		}
 	}else if(s == "ord"){
-		newArray = inOrderArr;
+		for(int i = 0; i < size; i++){
+			newArray[i] = inOrderArr[i];
+		}
 	}else{
-		newArray = randArr;
+		for(int i = 0; i < size; i++){
+			newArray[i] = randArr[i];
+		}
 	}
 	return newArray;
 }
@@ -295,7 +300,6 @@ void SortingClass::compareSorts() {
 	cout << endl;
 	delete [] arr;
 	cout << "Quick: ord "<<timePassed << endl;
-
 
 //MERGE
 	arr = copyArr("rand");
